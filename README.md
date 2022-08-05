@@ -1,6 +1,6 @@
 # Minaya Ceramic Creations
  
-### photos
+### ceramics
    VERB 		 | 		  PATH 		 |  	 DESCRIPTION
 ------------ | ------------- | -------------------
 GET | /ceramics | index of ceramic pieces |

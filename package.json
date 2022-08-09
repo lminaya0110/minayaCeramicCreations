@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-react-views": "^0.11.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "minayaceramiccreations",
+  "description": "VERB \t\t | \t\t  PATH \t\t |  \t DESCRIPTION ------------ | ------------- | ------------------- GET | /ceramics | index of ceramic pieces | GET | /ceramics/:id | show page for selected piece | GET | /ceramics/new | page to add newly available ceramic piece | POST | /ceramics | add new ceramic piece to site | GET | /ceramics/:id/edit | page to edit a photo | PUT | /ceramics/:id | edit/update a piece from the collection | DELETE | /ceramics/:id | delete ceramic piece that is no longer available |",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lminaya0110/minayaCeramicCreations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lminaya0110/minayaCeramicCreations/issues"
+  },
+  "homepage": "https://github.com/lminaya0110/minayaCeramicCreations#readme"
+}

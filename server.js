@@ -1,36 +1,139 @@
 const express = require('express')
-const app = express()
-const router = express.Router()
-const port = process.env.PORT || 3003
 require('dotenv').config()
-app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine());
-// app.use(express.urlencoded({ extended: true }))
-// app.use(methodOverride('_method'))
+const app = express()
+const port = process.env.PORT || 3003
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//if mongoose error delete if depreciation error useNewUrlParser: true, useUnifiedTopology: true
-mongoose.connection.once('open', ()=> {
-    console.log('connected to mongo')
+const CeramicPieces = require('./models/CeramicPieces')
+const methodOverride = require('method-override')
+const ceramicPiecesData = require('./utilities/ceramicPiecesData')
+
+//MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 })
-const ceramicPieces = require('./models/CeramicPieces')
-app.get('/', (req,res) => {
-    res.send('Hello World')
+mongoose.connection.once("open", () => {
+    console.log("connected to mongo");
 })
 
-app.get('/ceramics', (req,res) => {
-    res.send(ceramicPieces)
+//Middleware
+app.use((req, res, next) => {
+    console.log(`I run for all routes`);
+    next();
+})
+app.use(methodOverride("_method"));
+
+//Views
+app.set("view engine", "jsx");
+app.engine("jsx", require("express-react-views").createEngine());
+app.use(express.urlencoded({ extended: true }))
+
+//Port
+app.listen(port, () => {
+    console.log(`I am listening on port`, port);
 })
 
-app.get('/ceramics/new', (req,res) => {
-    res.render('New')
+//Seed Route
+// app.get('/ceramics/seed', (req, res)=>{
+//     ceramicPieces.create([
+//         {
+//             name:'Vase',
+//             price:'$25.99',
+//             // img: {https://images.pexels.com/photos/7185789/pexels-photo-7185789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1}
+//         },
+//         {
+//             name:'pitcher',
+//             price:'$35.99',
+//             // img: {https://images.pexels.com/photos/10687652/pexels-photo-10687652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1}
+//         },
+//         {
+//             name:'mug',
+//             price:'$19.99',
+//             // img: {https://images.pexels.com/photos/10002425/pexels-photo-10002425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1}
+//         }
+//     ], (err, data)=>{
+//         res.redirect('/ceramics');
+//     })
+// })
+
+//Home Page
+app.get('/', (req, res) => {
+    res.render('Home')
 })
 
-app.post('/ceramics', (req,res) => {
-    res.send(req.body)
-})
+
+//Index
+app.get("/ceramics", (req, res) => {
+    CeramicPieces.find({}, (error, allCeramicPieces) => {
+      res.render("Index", {
+        ceramicPieces: allCeramicPieces,
+      })
+    })
+  })
 
 
-app.listen(3000, () => {
-    console.log('Listening on port')
-})
+//New
+app.get("/ceramics/new", (req, res) => {
+    res.render("New")
+  })
+
+//Post route
+  app.post("/ceramics/", (req, res) => {
+    //Data manipulation
+    let name = req.body.name.split("")
+    name[0] = name[0].toUpperCase()
+    req.body.name = name.join("")
+  
+    CeramicPieces.create(req.body, (err, createdCeramicPieces) => {
+      res.redirect("/ceramics")
+      //    res.send(createdCeramicPieces)
+    })
+  })
+
+  //Show 
+  app.get("/ceramics/:id", (req, res) => {
+    CeramicPieces.findById(req.params.id, (err, foundCeramicPieces) => {
+      res.render("Show", {
+        ceramicPieces: foundCeramicPieces,
+      })
+    })
+  })
+
+//Delete
+app.delete("/ceramics/:id", (req, res) => {
+    Pokemon.findByIdAndRemove(req.params.id, (err, data) => {
+      res.redirect("/ceramics");
+    })
+  })
+
+//Edit
+  app.get("/ceramics/:id/edit", (req, res) => {
+    CeramicPieces.findById(req.params.id, (err, foundCeramicPieces) => {
+      if (!err) {
+        res.render("Edit", {
+          ceramicPieces: foundCeramicPieces,
+        })
+      } else {
+        res.send({
+          msg: err.message,
+        })
+      }
+    })
+  })
+
+//New info into database
+app.put("/ceramics/:id", (req, res) => {
+    CeramicPieces.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      },
+      (error, ceramicPieces) => {
+        res.redirect(`/ceramics/${req.params.id}`);
+      }
+    )
+  })
+
+
+

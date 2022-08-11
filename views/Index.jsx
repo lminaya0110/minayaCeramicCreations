@@ -48,10 +48,10 @@ class Index extends React.Component {
                     {ceramicPieces.map((ceramicPiece) => {
                         return (
                             <li>
-                                <h3>{ceramicPiece.name}</h3>
+                                <h2>{ceramicPiece.name}</h2>
                                 <img src={ceramicPiece.img} width="250px" height="auto"></img>
                                 <form action={`/ceramics/${ceramicPiece.id}?_method=DELETE`} method="POST">
-                                    <button type="submit" style={button}><h4 style={subtitle}>Delete Entry</h4></button>
+                                    <button type="submit" style={button}><h3 style={subtitle}>Delete Entry</h3></button>
                                 </form>
                                 <a href={`/ceramics/${ceramicPiece.id}/edit`}><button type="submit" style={button}><h4 style={subtitle}>Edit Entry</h4></button></a>
                             </li>

@@ -108,7 +108,7 @@ app.get("/ceramics/new", (req, res) => {
 
 //Delete
 app.delete("/ceramics/:id", (req, res) => {
-    Pokemon.findByIdAndRemove(req.params.id, (err, data) => {
+    CeramicPieces.findByIdAndRemove(req.params.id, (err, data) => {
       res.redirect("/ceramics");
     })
   })

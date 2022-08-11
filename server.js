@@ -56,6 +56,13 @@ app.listen(port, () => {
 //     })
 // })
 
+app.get('/ceramics/seed', (req,res) => {
+  CeramicPieces.create(
+    ceramicPiecesData
+  )
+  res.redirect('/ceramics')
+})
+
 //Home Page
 app.get('/', (req, res) => {
     res.render('Home')

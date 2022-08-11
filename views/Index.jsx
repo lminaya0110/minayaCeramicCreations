@@ -48,11 +48,12 @@ class Index extends React.Component {
                     {ceramicPieces.map((ceramicPiece) => {
                         return (
                             <li>
-                                <h3>{ceramicPieces.name}</h3>
-                                <form action={`/ceramics/${ceramicPieces.id}?_method=DELETE`} method="POST">
+                                <h3>{ceramicPiece.name}</h3>
+                                <img src={ceramicPiece.img} width="250px" height="auto"></img>
+                                <form action={`/ceramics/${ceramicPiece.id}?_method=DELETE`} method="POST">
                                     <button type="submit" style={button}><h4 style={subtitle}>Delete Entry</h4></button>
                                 </form>
-                                <a href={`/ceramics/${ceramicPieces.id}/edit`}><button type="submit" style={button}><h4 style={subtitle}>Edit Entry</h4></button></a>
+                                <a href={`/ceramics/${ceramicPiece.id}/edit`}><button type="submit" style={button}><h4 style={subtitle}>Edit Entry</h4></button></a>
                             </li>
                         )
                     })}

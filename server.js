@@ -56,8 +56,11 @@ app.listen(port, () => {
 //     })
 // })
 
-app.get('/ceramics/seed', (req,res) => {
-  CeramicPieces.create(
+app.get('/ceramics/seed', async (req,res) => {
+  await CeramicPieces.deleteMany({
+    //prop: //
+  })
+  await CeramicPieces.create(
     ceramicPiecesData
   )
   res.redirect('/ceramics')

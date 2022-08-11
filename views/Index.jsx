@@ -1,4 +1,5 @@
 const React = require('react')
+const { $where } = require('../models/CeramicPieces')
 
 const body = {
     backgroundColor: "#FDF0D5",
@@ -46,13 +47,23 @@ class Index extends React.Component {
                 <h1 style={title}>See our inventory!</h1><br/>
                 <ul>
                     {ceramicPieces.map((ceramicPiece) => {
+                        let stock;
+                        let btn;
+                        if(ceramicPiece.quantity == 0){
+                            stock = "Out of Stock"
+                            btn = null
+                        } else {
+                            stock = ceramicPiece.quantity
+                            btn = <a href={`/ceramics/`}><button type="submit" style={button} id="buy"><h4 style={subtitle}>Buy</h4></button></a>
+                        }
                         return (
                             <li>
                                 <h2>{ceramicPiece.name}</h2>
                                 <p>Description: {ceramicPiece.description}</p>
                                 <p>Price: {ceramicPiece.price}</p>
-                                <p>Quantity: {ceramicPiece.quantity}</p>
+                                <p>Quantity: {stock}</p>
                                 <img src={ceramicPiece.img} width="250px" height="auto"></img>
+                                {btn}
                                 <form action={`/ceramics/${ceramicPiece.id}?_method=DELETE`} method="POST">
                                     <button type="submit" style={button}><h3 style={subtitle}>Delete</h3></button>
                                 </form>

@@ -49,11 +49,14 @@ class Index extends React.Component {
                         return (
                             <li>
                                 <h2>{ceramicPiece.name}</h2>
+                                <p>Description: {ceramicPiece.description}</p>
+                                <p>Price: {ceramicPiece.price}</p>
+                                <p>Quantity: {ceramicPiece.quantity}</p>
                                 <img src={ceramicPiece.img} width="250px" height="auto"></img>
                                 <form action={`/ceramics/${ceramicPiece.id}?_method=DELETE`} method="POST">
-                                    <button type="submit" style={button}><h3 style={subtitle}>Delete Entry</h3></button>
+                                    <button type="submit" style={button}><h3 style={subtitle}>Delete</h3></button>
                                 </form>
-                                <a href={`/ceramics/${ceramicPiece.id}/edit`}><button type="submit" style={button}><h4 style={subtitle}>Edit Entry</h4></button></a>
+                                <a href={`/ceramics/${ceramicPiece.id}/edit`}><button type="submit" style={button}><h4 style={subtitle}>Edit</h4></button></a>
                             </li>
                         )
                     })}

@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 //Schema
 const ceramicPiecesSchema = new mongoose.Schema({
     name:  { type: String, required: true },
-    img:  { type: String, required: true }
+    img:  { type: String, required: true },
+    description : { type: String, required: true },
+    price: { type: Number, required: true },
+    quantity: { type: Number, required: true }
 })
 
 const CeramicPieces = mongoose.model('CeramicPieces', ceramicPiecesSchema);

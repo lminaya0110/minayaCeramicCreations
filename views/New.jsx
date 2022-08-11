@@ -46,6 +46,9 @@ class New extends React.Component {
                     <form action="/ceramics" method="POST">
                         Name: <input type="text" name="name" placeholder="name"></input><br/>
                         Image: <input type="text" name="img" placeholder="Image URL"></input><br/>
+                        Description: Name: <input type="text" name="description" placeholder='Description'/><br/>
+                        Price: Name: <input type="number" name="price" placeholder='Price'/><br/>
+                        Quantity: Name: <input type="number" name="quantity" placeholder='Quantity'/><br/>
                         <input type="submit" name="" value="Submit Entry"></input>
                     </form>
 

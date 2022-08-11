@@ -49,6 +49,9 @@ class Edit extends React.Component {
                 <form action={`/ceramics/${ceramicPieces.id}?_method=PUT`} method="POST">
                         Name: <input type="text" name="name" placeholder='Name'/><br/>
                         Image: <input type="text" name="img" placeholder='Image URL' /><br/>
+                        Description: Name: <input type="text" name="description" placeholder='Description'/><br/>
+                        Price: Name: <input type="number" name="price" placeholder='Price'/><br/>
+                        Quantity: Name: <input type="number" name="quantity" placeholder='Quantity'/><br/>
                         <input type="submit" name="" value="Edit Entry"/>
                     </form>
                     <img src={ceramicPieces.img} width="250px" height="auto"></img>

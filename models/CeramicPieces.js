@@ -6,7 +6,8 @@ const ceramicPiecesSchema = new mongoose.Schema({
     img:  { type: String, required: true },
     description : { type: String, required: true },
     price: { type: Number, required: true },
-    quantity: { type: Number, required: true }
+    quantity: { type: Number, required: true },
+    categories: { type: String, required: false }
 })
 
 const CeramicPieces = mongoose.model('CeramicPieces', ceramicPiecesSchema);

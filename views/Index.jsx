@@ -34,6 +34,10 @@ const subtitle = {
     fontWeight: "1.5rem"
 }
 
+const list = {
+    listStyle: "none"
+}
+
 
 class Index extends React.Component {
     render() {
@@ -45,7 +49,7 @@ class Index extends React.Component {
             </head>
             <body style={main}>
                 <h1 style={title}>See our inventory!</h1><br/>
-                <ul>
+                <ul style={list}>
                     {ceramicPieces.map((ceramicPiece) => {
                         let stock;
                         let btn;
@@ -60,7 +64,7 @@ class Index extends React.Component {
                             <li>
                                 <h2>{ceramicPiece.name}</h2>
                                 <p>Description: {ceramicPiece.description}</p>
-                                <p>Price: {ceramicPiece.price}</p>
+                                <p>Price: ${ceramicPiece.price}</p>
                                 <p>Quantity: {stock}</p>
                                 <img src={ceramicPiece.img} width="250px" height="auto"></img>
                                 {btn}

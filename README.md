@@ -18,6 +18,7 @@ PUT | /ceramics/:id | edit/update a piece from the collection |
 DELETE | /ceramics/:id | delete ceramic piece that is no longer available |
 
 &nbsp;  
+CeramicShopProject
 &nbsp;  
 ### Built With
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)

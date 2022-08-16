@@ -18,7 +18,7 @@ PUT | /ceramics/:id | edit/update a piece from the collection |
 DELETE | /ceramics/:id | delete ceramic piece that is no longer available |
 
 &nbsp;  
-CeramicShopProject
+
 &nbsp;  
 ### Built With
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -32,8 +32,10 @@ CeramicShopProject
 * ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
   
 &nbsp;  
-[![Video explaining project](https://i.imgur.com/uUgQaW6.png)](https://vimeo.com/740087627/f11acb9931) "Video explaining project")
+[![Video explaining project](https://i.imgur.com/uUgQaW6.png)](https://vimeo.com/740087627/f11acb9931)
 
+&nbsp;  
+[Project](https://minaya-ceramic-creations.herokuapp.com/)
 &nbsp;  
 &nbsp;  
 
@@ -103,6 +105,10 @@ Laura Minaya:
 [LinkedIn](https://www.linkedin.com/in/laura-minaya-b1a853223/)
 
 [Github](https://github.com/lminaya0110)  
+ 
+[Project](https://minaya-ceramic-creations.herokuapp.com/)
+&nbsp;  
+&nbsp;  
 
 &nbsp;  
 

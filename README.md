@@ -32,6 +32,7 @@ CeramicShopProject
 * ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
   
 &nbsp;  
+[![Video explaining project](https://i.imgur.com/uUgQaW6.png)](https://vimeo.com/740087627/f11acb9931) "Video explaining project")
 
 &nbsp;  
 &nbsp;  

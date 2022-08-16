@@ -31,6 +31,10 @@ DELETE | /ceramics/:id | delete ceramic piece that is no longer available |
 * ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
   
 &nbsp;  
+
+&nbsp;  
+&nbsp;  
+
 # Getting Started
 &nbsp;  
 

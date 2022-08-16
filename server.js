@@ -33,28 +33,6 @@ app.listen(port, () => {
     console.log(`I am listening on port`, port);
 })
 
-//Seed Route
-// app.get('/ceramics/seed', (req, res)=>{
-//     ceramicPieces.create([
-//         {
-//             name:'Vase',
-//             price:'$25.99',
-//             // img: {https://images.pexels.com/photos/7185789/pexels-photo-7185789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1}
-//         },
-//         {
-//             name:'pitcher',
-//             price:'$35.99',
-//             // img: {https://images.pexels.com/photos/10687652/pexels-photo-10687652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1}
-//         },
-//         {
-//             name:'mug',
-//             price:'$19.99',
-//             // img: {https://images.pexels.com/photos/10002425/pexels-photo-10002425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1}
-//         }
-//     ], (err, data)=>{
-//         res.redirect('/ceramics');
-//     })
-// })
 
 app.get('/ceramics/seed', async (req,res) => {
   await CeramicPieces.deleteMany({

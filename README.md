@@ -2,8 +2,9 @@
  
 ### About The Project
 &nbsp;  
-The purpose of this project is to create 7 restful routes for a mock store website. Below is a chart describing the paths that I have added to my store.
-&nbsp;  
+The goal of this application is to create 7 RESTful API’s. I structured my project as a mock e-commerce site for ceramic items, inspired by my sister who is a ceramic artist.
+The table below defines the following: HTTP methods, the path(URL endpoint), and the description of the action.
+
 &nbsp;  
 
 
@@ -17,25 +18,22 @@ GET | /ceramics/:id/edit | page to edit a photo |
 PUT | /ceramics/:id | edit/update a piece from the collection |
 DELETE | /ceramics/:id | delete ceramic piece that is no longer available |
 
-&nbsp;  
+[Deployed Project](https://minaya-ceramic-creations.herokuapp.com/)
 
 &nbsp;  
+
 ### Built With
-* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-* ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-* ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-
-* ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
   
 &nbsp;  
 [![Video explaining project](https://i.imgur.com/uUgQaW6.png)](https://vimeo.com/740087627/f11acb9931)
 
-&nbsp;  
-[Project](https://minaya-ceramic-creations.herokuapp.com/)
 &nbsp;  
 &nbsp;  
 
@@ -95,7 +93,7 @@ npm i mongoose
 
 # Usage  
 
-This project is a great way for beginners to create a full-stack application using their new knowledge in the MERN tech stack.  
+This project is a great way for beginners to learn how to implement their own restful APIs.  
 &nbsp;  
 
 # Author/ Contact
